@@ -45,30 +45,6 @@ ___
 
 * Use **vagrant up** to create and provision the VM.
 
-error after command 
-```
-The box you're attempting to add doesn't support the provider
-you requested. Please find an alternate box or use an alternate
-provider. Double-check your requested provider to verify you didn't
-simply misspell it.
-
-If you're adding a box from HashiCorp's Vagrant Cloud, make sure the box is
-released.
-
-Name: ubuntu/focal64
-Address: https://vagrantcloud.com/ubuntu/focal64
-Requested provider: [:libvirt]
-``` 
-tried to start manually **sudo vagrant up --provider=virtualbox**
-```
-The provider 'virtualbox' that was requested to back the machine
-'default' is reporting that it isn't usable on this system. The
-reason is shown below:
-
-VirtualBox is complaining that the installation is incomplete. Please
-run `VBoxManage --version` to see the error message which should contain
-instructions on how to fix this error.
-```
 
 
 
