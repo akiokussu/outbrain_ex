@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
         sudo apt-get install -y unzip
         wget https://releases.hashicorp.com/consul/1.18.0/consul_1.18.0_linux_arm64.zip
         unzip consul_1.18.0_linux_arm64.zip
-        rm consul_1.18.0_linux_arm64.zip
+        sudo mv consul /usr/local/bin/
         # -client "0.0.0.0": This option is set to allow connections from any IP address to the Consul client interface, 
         # useful for accessing the UI and API.
         #
