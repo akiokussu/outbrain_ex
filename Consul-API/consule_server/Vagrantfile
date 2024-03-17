@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
         rm consul_1.18.0_linux_arm64.zip
         sudo mkdir -p /var/consul
         sudo chown vagrant:vagrant /var/consul
+        sudo mkdir -p /etc/consul.d
+        sudo cp /vagrant/my-service.json /etc/consul.d/
         ### -client "0.0.0.0": This option is set to allow connections from any IP address to the Consul client interface, 
         # useful for accessing the UI and API.
         #

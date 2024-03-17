@@ -1,0 +1,11 @@
+{
+  "service": {
+    "name": "my-service",
+    "tags": ["tag1", "tag2"],
+    "port": 8080,
+    "check": {
+      "http": "http://172.16.145.153:8080/health",
+      "interval": "10s"
+    }
+  }
+}
