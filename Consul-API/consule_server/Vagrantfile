@@ -1,6 +1,7 @@
 Vagrant.configure("2") do |config|
     config.vm.box = "bento/ubuntu-20.04-arm64"
     config.vm.hostname = "consul-server"
+    config.vm.network "private_network", ip: "172.16.145.153"
     config.vm.network "forwarded_port", guest: 8500, host: 8500
     config.vm.provider :vmware_desktop do |vmware|
     end
@@ -10,11 +11,14 @@ Vagrant.configure("2") do |config|
         wget https://releases.hashicorp.com/consul/1.18.0/consul_1.18.0_linux_arm64.zip
         unzip consul_1.18.0_linux_arm64.zip
         sudo mv consul /usr/local/bin/
-        # -client "0.0.0.0": This option is set to allow connections from any IP address to the Consul client interface, 
+        rm consul_1.18.0_linux_arm64.zip
+        sudo mkdir -p /var/consul
+        sudo chown vagrant:vagrant /var/consul
+        ### -client "0.0.0.0": This option is set to allow connections from any IP address to the Consul client interface, 
         # useful for accessing the UI and API.
         #
-        # -bind: This option tells Consul the address to bind server and client interfaces to. 
+        ### -bind: This option tells Consul the address to bind server and client interfaces to. 
         #It's used for internal cluster communications.
-        consul agent -server -ui -client=0.0.0.0 -bind=0.0.0.0
+        consul agent -dev -ui -data-dir=/var/consul -client=0.0.0.0 -bind=172.16.145.153 -advertise=172.16.145.153
      SHELL
 end

@@ -1,7 +1,7 @@
 import requests
 import psutil
 
-CONSUL_BASE_URL = 'http://localhost:8500/v1'
+CONSUL_BASE_URL = 'http://172.16.145.153:8500/v1'
 
 def get_consul_status():
     try:
