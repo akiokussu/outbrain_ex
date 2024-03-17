@@ -30,6 +30,20 @@ Build and deploy a Consul server along with an API service that interacts with t
 
 ### Project Tree
 
+```
+├── HowTo.md
+├── README.md
+├── app
+│   ├── Dockerfile
+│   ├── __init__.py
+│   ├── consul_api.py
+│   ├── main.py
+│   └── requirements.txt
+└── consule_server
+    ├── Vagrantfile
+    └── my-service.json
+```
+
 ---
 
 ### 1. Create a GitHub Repository:
